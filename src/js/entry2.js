@@ -1,0 +1,1 @@
+document.getElementById('titlehead').innerHTML = 'Hello Kingcando';
