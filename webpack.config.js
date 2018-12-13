@@ -2,52 +2,85 @@ const path = require('path');
 const webpack = require('webpack');
 const uglify = require('uglifyjs-webpack-plugin');
 const htmlPlugin= require('html-webpack-plugin');
+const extractTextPlugin = require('extract-text-webpack-plugin');
+
+var website = {
+    publicPath: "http://127.0.0.1:1717/"
+}
 
 module.exports = {
     
     //入口文件的配置项
     entry: {
-        entry: './src/entry.js',
+        entry: './src/js/entry.js',
         // entry2: './src/js/entry2.js'
     },
     //出口文件的配置项
     output: {
         path: path.resolve(__dirname,'dist'),
-        filename: './js/[name].js'
+        filename: 'js/[name].js',
+        publicPath: website.publicPath
     },
     //模块： 例如解读css
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: [
-                    {
-                        loader: "style-loader"
-                    },{
-                        loader: "css-loader"
-                    }
-                ]
+                use: extractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
             },{
                 test: /\.(jpg|png|gif)/ ,
                 use: [{
                     loader: 'url-loader',
                     options: {
-                        limit: 55000
+                        limit: 5000,
+                        outputPath: 'images/'
                     }
                 }]
+            },{
+                test: /\.(htm|thml)$/i,
+                use: ['html-withimg-loader']
+            },
+            {
+                test: /\.less$/,
+                use: extractTextPlugin.extract({
+                    use:  [{
+                            loader: "css-loader"
+                        },{
+                            loader: "less-loader"
+                        }],
+                        fallback: "style-loader"
+                })
+                
+            },
+            {
+                test: /\.scss$/,
+                use: extractTextPlugin.extract({
+                    use: [
+                       {
+                            loader: "css-loader"
+                        },{
+                            loader: "sass-loader"
+                        }
+                    ],
+                    fallback: "style-loader"
+                })
             }
         ],
     },
     //插件
+        // new uglify(),
     plugins: [
-        new uglify(),
         new htmlPlugin({
             minify: {
                 removeAttributeQuotes: true
             },
             hash: true,
             template: './src/index.html'
-        })
+        }),
+        new extractTextPlugin("/css/index.css")
     ],
     //配置webpack开发服务功能
     devServer: {
