@@ -75,6 +75,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__entry2_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__entry2_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_black_less__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_black_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__css_black_less__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__css_bb_scss__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__css_bb_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__css_bb_scss__);
+
 
 
 
@@ -94,6 +97,12 @@ document.getElementById('titlehead').innerHTML = 'Hello Kingcando';
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

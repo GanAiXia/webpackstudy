@@ -1,14 +1,25 @@
 body {
-    background-color: #aaa;
-    color: red;
+  background-color: #aaa;
+  color: red;
 }
-#tupian{
-    background-image: url(http://127.0.0.1:1717/images/977534bc3d4ff08b5e7bb0055099bd4b.jpg);
-    background-size: contain;
-    width: 200px;
-    height: 185px;
-}#gogo {
+
+#tupian {
+  background-image: url(http://127.0.0.1:1717/images/977534bc3d4ff08b5e7bb0055099bd4b.jpg);
+  background-size: contain;
+  width: 200px;
+  height: 185px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#gogo {
   width: 300px;
   height: 300px;
   background-color: #000;
+}
+
+#nav {
+  width: 100%;
+  height: 130px;
+  background-color: green;
 }

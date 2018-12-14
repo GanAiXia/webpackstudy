@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const uglify = require('uglifyjs-webpack-plugin');
 const htmlPlugin= require('html-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
+const glob = require('glob');
+const PurifyCSSPlugin = require('purifycss-webpack')
 
 var website = {
     publicPath: "http://127.0.0.1:1717/"
@@ -28,7 +30,12 @@ module.exports = {
                 test: /\.css$/,
                 use: extractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader"
+                    use: [
+                        {
+                            loader: "css-loader", options: {importLoaders: 1}
+                        },
+                        'postcss-loader'
+                    ]
                 })
             },{
                 test: /\.(jpg|png|gif)/ ,
@@ -80,7 +87,10 @@ module.exports = {
             hash: true,
             template: './src/index.html'
         }),
-        new extractTextPlugin("/css/index.css")
+        new extractTextPlugin("/css/index.css"),
+        new PurifyCSSPlugin({
+            paths: glob.sync(path.join(__dirname,'src/*.html'))
+        })
     ],
     //配置webpack开发服务功能
     devServer: {
