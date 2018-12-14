@@ -65,23 +65,33 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_index_css__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_index_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__entry2_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__entry2_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__entry2_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_black_less__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_black_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__css_black_less__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__css_bb_scss__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__css_bb_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__css_bb_scss__);
 
 
+var _index = __webpack_require__(1);
 
+var _index2 = _interopRequireDefault(_index);
 
-document.getElementById('title').innerHTML = 'Hello Webpack';
+var _entry = __webpack_require__(2);
+
+var _entry2 = _interopRequireDefault(_entry);
+
+var _black = __webpack_require__(3);
+
+var _black2 = _interopRequireDefault(_black);
+
+var _bb = __webpack_require__(4);
+
+var _bb2 = _interopRequireDefault(_bb);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+{
+    var kingcando = "hello world";
+    document.getElementById('title').innerHTML = kingcando;
+}
 
 /***/ }),
 /* 1 */
@@ -91,7 +101,10 @@ document.getElementById('title').innerHTML = 'Hello Webpack';
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 document.getElementById('titlehead').innerHTML = 'Hello Kingcando';
 
